@@ -1,22 +1,22 @@
-import PropTypes from 'prop-types'; // типи пропсів
-import css from './ContactList.module.css'; // стилізація
+import PropTypes from 'prop-types';  
+import css from './ContactList.module.css';  
 
-// компонент списку контактів
+ 
 export const ContactList = ({ contacts, delContact }) => {
   return (
     <ul className={css.list}>
 
-      {/* рендеримо список контактів */}
+ 
       {contacts.map(contact => {
         return (
-          <li className={css.item} key={contact.id}> {/* використовуємо ідентифікатор контакту як ключ */}
+          <li className={css.item} key={contact.id}> 
             <span>{contact.name}:</span>
             <span className={css.number}> {contact.number}</span>
             <button
               className={css.button}
               type="button"
               onClick={() => {
-                delContact(contact.id); // викликаємо функцію видалення контакту
+                delContact(contact.id);  
               }}
             >
               Delete
@@ -28,9 +28,9 @@ export const ContactList = ({ contacts, delContact }) => {
   );
 };
 
-// типи пропсів
+ 
 ContactList.propTypes = {
-  delContact: PropTypes.func.isRequired, // функція
-  contacts:PropTypes.array.isRequired // масив
+  delContact: PropTypes.func.isRequired, 
+  contacts:PropTypes.array.isRequired  
 };
 

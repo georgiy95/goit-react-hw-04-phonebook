@@ -1,16 +1,16 @@
-import css from './Filter.module.css'; // стилізація
-import PropTypes from 'prop-types'; // типи пропсів
+import css from './Filter.module.css';
+import PropTypes from 'prop-types';
 
-// компонент форми для фільтрації контактів
 export const Filter = ({ filter, onChangeInput }) => {
   return (
     <>
-      <label>
+      <label className={css.label}>
         Find contacts by name
         <br />
-        <input className={css.input}
-          onChange={onChangeInput} // викликаємо функцію зміни стану
-          value={filter} // встановлюємо значення
+        <input
+          className={css.input}
+          onChange={onChangeInput}
+          value={filter}
           type="text"
           name="filter"
         />
@@ -20,8 +20,7 @@ export const Filter = ({ filter, onChangeInput }) => {
   );
 };
 
-// типи пропсів
 Filter.propTypes = {
-  filter: PropTypes.string.isRequired, // рядок
-  onChangeInput:PropTypes.func.isRequired // функція
+  filter: PropTypes.string.isRequired,
+  onChangeInput: PropTypes.func.isRequired,
 };

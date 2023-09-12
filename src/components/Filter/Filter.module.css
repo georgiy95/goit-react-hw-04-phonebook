@@ -1,3 +1,21 @@
 .input {
+  color: #0004ff;
+  font-size: 24px;
+  border-color: #0004ff;
+  border-radius: 5px;
+  display: block;
+  font-size: 18px;
   margin-top: 10px;
+  text-transform: capitalize;
+  width: 300px;
+}
+
+.label {
+  margin-bottom: 8px;
+  border-color: #0004ff;
+  border-radius: 5px;
+  font-size: 24px;
+  outline-color: blue;
+  width: 300px;
+  color: #0004ff;
 }
