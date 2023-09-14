@@ -20,6 +20,7 @@ export const ContactForm = ({ addContact }) => {
           evt.preventDefault();
           addContact({ name, number });
           setNumber('');
+          setName('');
         }}
       >
         <label className={css.label}>
