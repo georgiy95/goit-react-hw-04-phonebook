@@ -37,29 +37,19 @@ export const App = () => {
       )
     ) {
       alert(`${name} is alredy in contacts`);
-    } else {
-      setContacts(old => {
-        const list = [...old];
-        list.push({
-          id: nanoid(),
-          name: name,
-          number: number,
-        });
-        return list;
-      });
+      return;
     }
+    setContacts(old => [...old, { id: nanoid(), name, number }]);
   };
 
   const filterFu = () => {
-    const filteredContacts = contacts.filter(contact =>
+    return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
-    return filteredContacts;
   };
 
-  const delContact = id => {
-    const filtred = contacts.filter(item => item.id !== id);
-    setContacts(filtred);
+  const delContact = contactId => {
+    setContacts(prevState => prevState.filter(({ id }) => id !== contactId));
   };
 
   return (
